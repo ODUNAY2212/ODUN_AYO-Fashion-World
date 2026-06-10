@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Our Heritage &amp; Services | ODUN_AYO Fashion World</title>
+  <meta name="description" content="Read the story of ODUN_AYO Fashion World. From our roots in Ibadan, Oyo State, to providing custom bespoke tailoring, native African senators, alters, and luxury fashion consulting.">
+  
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Tailwind Configuration -->
+  <script src="tailwind.config.js"></script>
+  <!-- Custom Styles -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="bg-luxury-black text-white selection:bg-luxury-gold selection:text-luxury-black font-sans min-h-screen pt-24">
+
+  <!-- HEADER -->
+  <header id="main-header" class="fixed top-0 left-0 w-full z-40 transition-all duration-300 py-6 glass-nav">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
+      
+      <!-- LOGO -->
+      <a href="index.html" class="flex items-center w-60 sm:w-72">
+        <object data="assets/logo.svg" type="image/svg+xml" class="w-full h-full pointer-events-none"></object>
+      </a>
+
+      <!-- DESKTOP NAVIGATION -->
+      <nav class="hidden md:flex items-center space-x-8 text-xs font-semibold uppercase tracking-widest">
+        <a href="index.html" class="text-luxury-gray hover:text-luxury-gold transition-colors">Home</a>
+        <a href="shop.html" class="text-luxury-gray hover:text-luxury-gold transition-colors">Shop</a>
+        <a href="gallery.html" class="text-luxury-gray hover:text-luxury-gold transition-colors">Lookbook</a>
+        <a href="about.html" class="text-luxury-gold hover:text-white transition-colors">About Us</a>
+        <a href="contact.html" class="text-luxury-gray hover:text-luxury-gold transition-colors">Contact</a>
+      </nav>
+
+      <!-- UTILITY ICONS -->
+      <div class="flex items-center space-x-6">
+        <!-- Wishlist -->
+        <a href="shop.html?wishlist=true" class="text-luxury-gray hover:text-luxury-gold transition-colors" title="View Wishlist">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path>
+          </svg>
+        </a>
+
+        <!-- Cart Trigger -->
+        <a href="#" class="btn-cart-open text-luxury-gray hover:text-luxury-gold transition-colors relative" title="View Cart">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"></path>
+          </svg>
+          <span class="cart-badge absolute -top-2 -right-2 bg-luxury-gold text-luxury-black text-[9px] font-bold w-4 h-4 rounded-full flex items-center justify-center hidden">0</span>
+        </a>
+
+        <!-- Hamburger Menu Button -->
+        <button id="btn-menu-toggle" class="md:hidden text-luxury-gray hover:text-luxury-gold transition-colors focus:outline-none">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+          </svg>
+        </button>
+      </div>
+
+    </div>
+  </header>
+
+  <!-- MOBILE MENU DRAWER -->
+  <div id="mobile-menu-overlay" class="fixed inset-0 bg-black bg-opacity-70 z-40 hidden"></div>
+  <div id="mobile-menu" class="fixed top-0 right-0 h-full w-80 bg-luxury-charcoal border-l border-luxury-border z-50 transform translate-x-full transition-transform duration-300 ease-in-out p-6 flex flex-col justify-between">
+    <div>
+      <div class="flex items-center justify-between mb-8 pb-4 border-b border-luxury-border">
+        <span class="font-serif text-lg tracking-widest text-luxury-gold">NAVIGATION</span>
+        <button id="btn-menu-close" class="text-luxury-gray hover:text-white focus:outline-none">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+          </svg>
+        </button>
+      </div>
+      <nav class="flex flex-col space-y-6 text-sm font-semibold uppercase tracking-widest">
+        <a href="index.html" class="text-luxury-gray hover:text-luxury-gold transition-colors">Home</a>
+        <a href="shop.html" class="text-luxury-gray hover:text-luxury-gold transition-colors">Shop</a>
+        <a href="gallery.html" class="text-luxury-gray hover:text-luxury-gold transition-colors">Lookbook</a>
+        <a href="about.html" class="text-luxury-gold hover:text-white transition-colors">About Us</a>
+        <a href="contact.html" class="text-luxury-gray hover:text-luxury-gold transition-colors">Contact</a>
+      </nav>
+    </div>
+    <div class="border-t border-luxury-border pt-6 text-xs text-luxury-gray space-y-2">
+      <p>ODUN_AYO Fashion World</p>
+      <p>Eleyele, Ibadan, Oyo State</p>
+      <p class="text-luxury-gold">09165454646</p>
+    </div>
+  </div>
+
+  <!-- SHOPPING CART SIDEBAR -->
+  <div id="cart-overlay" class="fixed inset-0 bg-black bg-opacity-70 z-40 hidden"></div>
+  <div id="cart-sidebar" class="fixed top-0 right-0 h-full w-96 max-w-full bg-luxury-charcoal border-l border-luxury-border z-50 transform translate-x-full transition-transform duration-300 ease-in-out p-6 flex flex-col justify-between">
+    <div>
+      <div class="flex items-center justify-between mb-6 pb-4 border-b border-luxury-border">
+        <span class="font-serif text-lg tracking-widest text-luxury-gold">SHOPPING CART</span>
+        <button id="btn-cart-close" class="text-luxury-gray hover:text-white focus:outline-none">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+          </svg>
+        </button>
+      </div>
+      <div id="cart-sidebar-items" class="overflow-y-auto max-h-[calc(100vh-270px)] pr-2">
+        <!-- Rendered by js/cart.js -->
+      </div>
+    </div>
+
+    <!-- Cart Sidebar Footer -->
+    <div class="border-t border-luxury-border pt-6">
+      <div class="flex justify-between text-sm uppercase tracking-wider mb-4">
+        <span class="text-luxury-gray">Subtotal:</span>
+        <span id="cart-sidebar-subtotal" class="font-semibold text-luxury-gold">$0</span>
+      </div>
+      <p class="text-[10px] text-luxury-gray mb-6">Taxes and shipping calculated at checkout.</p>
+      <div class="space-y-3">
+        <a href="checkout.html" class="block w-full py-3 bg-luxury-gold text-luxury-black text-center font-semibold text-xs tracking-widest uppercase hover:bg-luxury-goldLight transition-colors">Checkout Now</a>
+        <button onclick="cartSystem.closeSidebar()" class="block w-full py-3 border border-luxury-border text-white text-center font-semibold text-xs tracking-widest uppercase hover:bg-white hover:text-luxury-black transition-all">Continue Shopping</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ABOUT HERO BANNER -->
+  <section class="py-16 bg-luxury-charcoal border-b border-luxury-border">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <span class="text-luxury-gold text-xs tracking-[0.4em] uppercase font-semibold">THE HOUSE HERITAGE</span>
+      <h1 class="font-serif text-4xl mt-3 text-white">Our Story &amp; Services</h1>
+      <p class="text-luxury-gray text-xs max-w-md mx-auto mt-3 font-light leading-relaxed">A testament to absolute elegance, tailoring heritage, and exquisite materials since inception.</p>
+    </div>
+  </section>
+
+  <!-- STORY SECTION -->
+  <section class="py-24 bg-luxury-black">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+        
+        <!-- Story image banner -->
+        <div class="border border-luxury-border bg-luxury-charcoal h-[450px] relative overflow-hidden reveal">
+          <img src="https://images.unsplash.com/photo-1593032465175-481ac7f401a0?auto=format&fit=crop&w=800&h=600&q=80" alt="Tailor Cutting Pattern" class="w-full h-full object-cover">
+          <div class="absolute inset-0 bg-black/30"></div>
+        </div>
+
+        <!-- Story words -->
+        <div class="space-y-6 reveal">
+          <span class="text-luxury-gold text-xs tracking-[0.3em] font-semibold uppercase">FOUNDING LEGACY</span>
+          <h2 class="font-serif text-3xl text-white">Crafting Nobles Since Inception</h2>
+          <p class="text-luxury-gray text-xs leading-relaxed font-light">
+            Founded with a singular, clear vision: to introduce high-fashion luxury tailoring to Ibadan, Oyo State, while serving clients with exquisite taste nationwide. The name <strong>ODUN_AYO</strong> represents joy, and we bring this spirit into the creation of every thread, lining, and button.
+          </p>
+          <p class="text-luxury-gray text-xs leading-relaxed font-light">
+            Our atelier merges classic European cutting techniques with rich African design aesthetics. By focusing heavily on personal measurement calibrations, we ensure that every customer receives garments that represent their stature and posture.
+          </p>
+          
+          <!-- Core values grid -->
+          <div class="grid grid-cols-2 gap-6 pt-6 border-t border-luxury-border">
+            <div>
+              <h4 class="font-serif text-sm text-luxury-gold mb-1">Our Mission</h4>
+              <p class="text-[11px] text-luxury-gray font-light">To deliver unparalleled self-confidence through custom-fitting haute couture and bespoke apparel designs.</p>
+            </div>
+            <div>
+              <h4 class="font-serif text-sm text-luxury-gold mb-1">Our Vision</h4>
+              <p class="text-[11px] text-luxury-gray font-light">To stand as Africa's premier luxury fashion destination, matching international houses in craftsmanship and detail.</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- MILESTONES CSS TIMELINE -->
+  <section class="py-24 bg-luxury-charcoal border-t border-b border-luxury-border">
+    <div class="max-w-4xl mx-auto px-4">
+      
+      <div class="text-center mb-16 reveal">
+        <span class="text-luxury-gold text-xs tracking-[0.3em] font-semibold uppercase">THE EXPEDITION</span>
+        <h2 class="font-serif text-3xl mt-2">Historical Timeline</h2>
+        <div class="w-12 h-[1px] bg-luxury-gold mx-auto mt-4"></div>
+      </div>
+
+      <div class="relative timeline space-y-12">
+        <!-- Milestone 1 -->
+        <div class="flex flex-col md:flex-row items-center md:justify-between reveal">
+          <div class="w-full md:w-5/12 text-left md:text-right pr-0 md:pr-8 mb-4 md:mb-0">
+            <span class="text-luxury-gold font-serif text-lg font-bold">2018</span>
+            <h4 class="font-serif text-sm text-white mt-1">The First Stitch</h4>
+            <p class="text-luxury-gray text-xs font-light mt-1">Opening a small private studio in Ibadan, dedicated strictly to bespoke gentleman suits and custom bridal measurements.</p>
+          </div>
+          <div class="w-2.5 h-2.5 rounded-full bg-luxury-gold z-10 border border-luxury-black absolute left-[20px] md:left-1/2 -translate-x-[5px] md:-translate-x-[5px]"></div>
+          <div class="w-full md:w-5/12 pl-0 md:pl-8"></div>
+        </div>
+
+        <!-- Milestone 2 -->
+        <div class="flex flex-col md:flex-row items-center md:justify-between reveal" style="transition-delay: 50ms;">
+          <div class="w-full md:w-5/12"></div>
+          <div class="w-2.5 h-2.5 rounded-full bg-luxury-gold z-10 border border-luxury-black absolute left-[20px] md:left-1/2 -translate-x-[5px] md:-translate-x-[5px]"></div>
+          <div class="w-full md:w-5/12 text-left pl-0 md:pl-8 mb-4 md:mb-0">
+            <span class="text-luxury-gold font-serif text-lg font-bold">2020</span>
+            <h4 class="font-serif text-sm text-white mt-1">Heritage Natives Launch</h4>
+            <p class="text-luxury-gray text-xs font-light mt-1">Expanding services to incorporate premium traditional Nigerian native wear, introducing heavy hand-woven Aso-Oke collections.</p>
+          </div>
+        </div>
+
+        <!-- Milestone 3 -->
+        <div class="flex flex-col md:flex-row items-center md:justify-between reveal" style="transition-delay: 100ms;">
+          <div class="w-full md:w-5/12 text-left md:text-right pr-0 md:pr-8 mb-4 md:mb-0">
+            <span class="text-luxury-gold font-serif text-lg font-bold">2023</span>
+            <h4 class="font-serif text-sm text-white mt-1">The Eleyele Showroom</h4>
+            <p class="text-luxury-gray text-xs font-light mt-1">Inaugurating our flagship luxury showroom in Eleyele, Ibadan, featuring dedicated client measuring rooms and private styling lounges.</p>
+          </div>
+          <div class="w-2.5 h-2.5 rounded-full bg-luxury-gold z-10 border border-luxury-black absolute left-[20px] md:left-1/2 -translate-x-[5px] md:-translate-x-[5px]"></div>
+          <div class="w-full md:w-5/12 pl-0 md:pl-8"></div>
+        </div>
+
+        <!-- Milestone 4 -->
+        <div class="flex flex-col md:flex-row items-center md:justify-between reveal" style="transition-delay: 150ms;">
+          <div class="w-full md:w-5/12"></div>
+          <div class="w-2.5 h-2.5 rounded-full bg-luxury-gold z-10 border border-luxury-black absolute left-[20px] md:left-1/2 -translate-x-[5px] md:-translate-x-[5px]"></div>
+          <div class="w-full md:w-5/12 text-left pl-0 md:pl-8 mb-4 md:mb-0">
+            <span class="text-luxury-gold font-serif text-lg font-bold">2026</span>
+            <h4 class="font-serif text-sm text-white mt-1">Digital Atelier launch</h4>
+            <p class="text-luxury-gray text-xs font-light mt-1">Integrating e-commerce logistics to ship customized fitting garments, watches, shoes, and bags to clients globally.</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ATELIER SERVICES GRID -->
+  <section class="py-24 bg-luxury-black">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-2xl mx-auto mb-20 reveal">
+        <span class="text-luxury-gold text-xs tracking-[0.3em] font-semibold uppercase">EXPERT CAPABILITIES</span>
+        <h2 class="font-serif text-3xl sm:text-4xl mt-2">Atelier Services</h2>
+        <p class="text-luxury-gray text-xs mt-3">Exquisite craftsmanship delivered across 8 select channels.</p>
+        <div class="w-12 h-[1px] bg-luxury-gold mx-auto mt-4"></div>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        
+        <!-- Service 1 -->
+        <div class="p-6 border border-luxury-border hover:border-luxury-gold transition-colors flex flex-col justify-between reveal">
+          <div>
+            <span class="text-xs text-luxury-gold font-serif mb-2 block font-semibold">01 / Tailoring</span>
+            <h3 class="font-serif text-lg text-white mb-3">Bespoke Custom Tailoring</h3>
+            <p class="text-luxury-gray text-xs leading-relaxed font-light mb-6">Complete personalization from collar cuts, cuff shapes, pocket layouts, and internal silk linings for suits and garments.</p>
+          </div>
+          <a href="contact.html?inquiry=Bespoke%20Tailoring" class="text-[10px] text-luxury-gold font-bold tracking-widest uppercase hover:text-white transition-colors">Book Consult &rarr;</a>
+        </div>
+
+        <!-- Service 2 -->
+        <div class="p-6 border border-luxury-border hover:border-luxury-gold transition-colors flex flex-col justify-between reveal" style="transition-delay: 50ms;">
+          <div>
+            <span class="text-xs text-luxury-gold font-serif mb-2 block font-semibold">02 / Men</span>
+            <h3 class="font-serif text-lg text-white mb-3">Men's Luxury Wear</h3>
+            <p class="text-luxury-gray text-xs leading-relaxed font-light mb-6">Premium office suits, blazer jackets, double-breasted cashmere trench coats, and daily luxury executive apparel.</p>
+          </div>
+          <a href="shop.html?category=Men's%20Fashion" class="text-[10px] text-luxury-gold font-bold tracking-widest uppercase hover:text-white transition-colors">Shop Men &rarr;</a>
+        </div>
+
+        <!-- Service 3 -->
+        <div class="p-6 border border-luxury-border hover:border-luxury-gold transition-colors flex flex-col justify-between reveal" style="transition-delay: 100ms;">
+          <div>
+            <span class="text-xs text-luxury-gold font-serif mb-2 block font-semibold">03 / Women</span>
+            <h3 class="font-serif text-lg text-white mb-3">Women's Couture</h3>
+            <p class="text-luxury-gray text-xs leading-relaxed font-light mb-6">Dazzling evening gowns, halter silk dresses, hand-made wool blazers, and custom bridal guest attires.</p>
+          </div>
+          <a href="shop.html?category=Women's%20Fashion" class="text-[10px] text-luxury-gold font-bold tracking-widest uppercase hover:text-white transition-colors">Shop Women &rarr;</a>
+        </div>
+
+        <!-- Service 4 -->
+        <div class="p-6 border border-luxury-border hover:border-luxury-gold transition-colors flex flex-col justify-between reveal" style="transition-delay: 150ms;">
+          <div>
+            <span class="text-xs text-luxury-gold font-serif mb-2 block font-semibold">04 / Children</span>
+            <h3 class="font-serif text-lg text-white mb-3">Children's Fashion</h3>
+            <p class="text-luxury-gray text-xs leading-relaxed font-light mb-6">Adorable velvet suits, silk tulle flower dresses, and matching parents' custom traditional sets for children.</p>
+          </div>
+          <a href="shop.html?category=Children's%20Fashion" class="text-[10px] text-luxury-gold font-bold tracking-widest uppercase hover:text-white transition-colors">Shop Kids &rarr;</a>
+        </div>
+
+        <!-- Service 5 -->
+        <div class="p-6 border border-luxury-border hover:border-luxury-gold transition-colors flex flex-col justify-between reveal">
+          <div>
+            <span class="text-xs text-luxury-gold font-serif mb-2 block font-semibold">05 / Traditional</span>
+            <h3 class="font-serif text-lg text-white mb-3">Native Wear Heritage</h3>
+            <p class="text-luxury-gray text-xs leading-relaxed font-light mb-6">Nigerian traditional styles: custom Agbadas, Senator designs, Kaftans, and Aso-Oke laces made with local craftsmanship.</p>
+          </div>
+          <a href="shop.html?category=Native%20Wear" class="text-[10px] text-luxury-gold font-bold tracking-widest uppercase hover:text-white transition-colors">Shop Natives &rarr;</a>
+        </div>
+
+        <!-- Service 6 -->
+        <div class="p-6 border border-luxury-border hover:border-luxury-gold transition-colors flex flex-col justify-between reveal" style="transition-delay: 50ms;">
+          <div>
+            <span class="text-xs text-luxury-gold font-serif mb-2 block font-semibold">06 / Adjustments</span>
+            <h3 class="font-serif text-lg text-white mb-3">Expert Alterations</h3>
+            <p class="text-luxury-gray text-xs leading-relaxed font-light mb-6">Precision adjustments for vintage clothing, wedding gowns, luxury jackets, and trousers. Handled in our Ibadan studio.</p>
+          </div>
+          <a href="contact.html?inquiry=Alterations" class="text-[10px] text-luxury-gold font-bold tracking-widest uppercase hover:text-white transition-colors">Request Service &rarr;</a>
+        </div>
+
+        <!-- Service 7 -->
+        <div class="p-6 border border-luxury-border hover:border-luxury-gold transition-colors flex flex-col justify-between reveal" style="transition-delay: 100ms;">
+          <div>
+            <span class="text-xs text-luxury-gold font-serif mb-2 block font-semibold">07 / Consultation</span>
+            <h3 class="font-serif text-lg text-white mb-3">Fashion Consulting</h3>
+            <p class="text-luxury-gray text-xs leading-relaxed font-light mb-6">Private styling advice for weddings, corporate executives, board meetings, and high-profile societal events.</p>
+          </div>
+          <a href="https://wa.me/2349165454646" target="_blank" class="text-[10px] text-luxury-gold font-bold tracking-widest uppercase hover:text-white transition-colors">WhatsApp Consult &rarr;</a>
+        </div>
+
+        <!-- Service 8 -->
+        <div class="p-6 border border-luxury-border hover:border-luxury-gold transition-colors flex flex-col justify-between reveal" style="transition-delay: 150ms;">
+          <div>
+            <span class="text-xs text-luxury-gold font-serif mb-2 block font-semibold">08 / Accessories</span>
+            <h3 class="font-serif text-lg text-white mb-3">Fine Accessories</h3>
+            <p class="text-luxury-gray text-xs leading-relaxed font-light mb-6">Italian leather belts with gold buckles, hand-rolled silk scarves, cufflinks, sunglasses, and timekeepers.</p>
+          </div>
+          <a href="shop.html?category=Accessories" class="text-[10px] text-luxury-gold font-bold tracking-widest uppercase hover:text-white transition-colors">Shop Accs &rarr;</a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="bg-luxury-black text-luxury-gray py-16 border-t border-luxury-border">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-4 gap-12">
+      <!-- Info Column -->
+      <div class="space-y-6">
+        <a href="index.html" class="flex items-center w-56">
+          <object data="assets/logo.svg" type="image/svg+xml" class="w-full h-full pointer-events-none"></object>
+        </a>
+        <p class="text-xs leading-relaxed font-light">
+          ODUN_AYO Fashion World is a premier luxury house specializing in bespoke tailoring, high-fashion native attire, and fine accessories. Based in Eleyele, Ibadan, Nigeria.
+        </p>
+      </div>
+
+      <!-- Quick Links -->
+      <div>
+        <h4 class="font-serif text-sm text-white tracking-widest uppercase mb-6">Quick Links</h4>
+        <ul class="space-y-4 text-xs">
+          <li><a href="index.html" class="hover:text-luxury-gold transition-colors">Home Page</a></li>
+          <li><a href="shop.html" class="hover:text-luxury-gold transition-colors">Premium Shop</a></li>
+          <li><a href="gallery.html" class="hover:text-luxury-gold transition-colors">Season Lookbook</a></li>
+          <li><a href="about.html" class="hover:text-luxury-gold transition-colors">Our Heritage</a></li>
+          <li><a href="contact.html" class="hover:text-luxury-gold transition-colors">Contact Atelier</a></li>
+        </ul>
+      </div>
+
+      <!-- Services -->
+      <div>
+        <h4 class="font-serif text-sm text-white tracking-widest uppercase mb-6">Our Services</h4>
+        <ul class="space-y-4 text-xs font-light">
+          <li>Bespoke Custom Tailoring</li>
+          <li>Luxury Senator Kaftans</li>
+          <li>Premium Agbada &amp; Native Sets</li>
+          <li>Bridal &amp; Evening Wear Couture</li>
+          <li>Professional Alterations</li>
+          <li>Fashion Styling Consulting</li>
+        </ul>
+      </div>
+
+      <!-- Contact Info -->
+      <div>
+        <h4 class="font-serif text-sm text-white tracking-widest uppercase mb-6">Address &amp; Hours</h4>
+        <p class="text-xs leading-relaxed font-light mb-4">
+          Eleyele, Ibadan,<br>
+          Oyo State, Nigeria
+        </p>
+        <p class="text-xs font-light mb-1">Email: <a href="mailto:odunayoshalom22@gmail.com" class="hover:text-luxury-gold">odunayoshalom22@gmail.com</a></p>
+        <p class="text-xs font-light mb-4">Tel: <a href="tel:09165454646" class="hover:text-luxury-gold">09165454646</a></p>
+        
+        <!-- Social Icons -->
+        <div class="flex items-center space-x-4 pt-2">
+          <!-- Facebook -->
+          <a href="#" class="hover:text-luxury-gold transition-colors">
+            <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M9 8H7v3h2v9h3v-9h3l.5-3H12V6.5C12 5.7 12.3 5 13.5 5H15V2h-2.5C9.7 2 9 3.5 9 5.5V8z"/></svg>
+          </a>
+          <!-- Instagram -->
+          <a href="#" class="hover:text-luxury-gold transition-colors">
+            <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.051C.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+          </a>
+          <!-- Twitter -->
+          <a href="#" class="hover:text-luxury-gold transition-colors">
+            <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Copyright -->
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-12 mt-12 border-t border-luxury-border text-center text-[10px] uppercase tracking-widest text-luxury-gray">
+      <p>&copy; 2026 ODUN_AYO Fashion World. All Rights Reserved. Designed for Nobles.</p>
+    </div>
+  </footer>
+
+  <!-- FLOATING WHATSAPP CHAT -->
+  <a href="https://wa.me/2349165454646?text=Hello%20ODUN_AYO%20Fashion%20World%2C%20I'm%20visiting%20your%20website%20and%20would%20like%20to%20inquire%20about%20your%20bespoke%20fashion%20services." target="_blank" class="whatsapp-float" title="Chat on WhatsApp">
+    <svg class="w-8 h-8 fill-current" viewBox="0 0 24 24">
+      <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.06 5.348 5.397.01 12.008.01c3.202.001 6.212 1.246 8.477 3.514 2.266 2.268 3.507 5.28 3.505 8.484-.004 6.657-5.34 11.997-11.953 11.997-2.005-.001-3.973-.502-5.724-1.457L0 24zm6.59-4.846c1.6.95 3.488 1.459 5.407 1.461 5.432.001 9.853-4.417 9.856-9.853.002-2.63-1.023-5.102-2.89-6.969C17.155 1.958 14.68 .934 12.05.934c-5.44 0-9.863 4.42-9.866 9.858-.002 1.94.502 3.834 1.464 5.441l-.986 3.601 3.69-.968zM17.65 15.65c-.29-.145-1.72-.85-1.99-.95-.27-.1-.465-.145-.66.15-.195.295-.755.95-.925 1.145-.17.195-.34.22-.63.075-.29-.145-1.225-.45-2.33-1.44-.86-.77-1.44-1.72-1.61-2-.17-.29-.015-.45.13-.595.13-.13.29-.34.435-.51.145-.17.195-.29.29-.485.095-.195.05-.37-.025-.515-.075-.15-.66-1.59-.9-2.18-.235-.57-.475-.49-.66-.5-.17-.01-.37-.01-.57-.01-.2 0-.52.075-.79.37-.27.295-1.03.1-1.03 2.5 0 2.405 1.75 4.73 1.99 5.055.24.325 3.445 5.26 8.345 7.38 1.165.505 2.075.805 2.785 1.03 1.17.37 2.24.32 3.08.19 1.045-.155 2.185-.895 2.49-1.76.305-.865.305-1.61.215-1.76-.09-.15-.33-.24-.62-.385z"/>
+    </svg>
+  </a>
+
+  <!-- BACK TO TOP BUTTON -->
+  <a href="#" id="btn-back-to-top" class="fixed bottom-[100px] right-[30px] w-12 h-12 border border-luxury-gold text-luxury-gold flex items-center justify-center hover:bg-luxury-gold hover:text-luxury-black transition-all duration-300 opacity-0 pointer-events-none translate-y-5 z-40">
+    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18"></path>
+    </svg>
+  </a>
+
+  <!-- Core Scripts -->
+  <script src="js/products.js"></script>
+  <script src="js/cart.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

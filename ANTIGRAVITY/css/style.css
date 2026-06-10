@@ -1,0 +1,188 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap');
+
+:root {
+  --color-luxury-black: #0A0A0A;
+  --color-luxury-gold: #D4AF37;
+  --color-luxury-charcoal: #121212;
+  --color-luxury-border: #2A2A2A;
+}
+
+html {
+  scroll-behavior: smooth;
+  background-color: var(--color-luxury-black);
+  color: #FFFFFF;
+  font-family: 'Inter', sans-serif;
+  overflow-x: hidden;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-luxury-black);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-luxury-gold);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #AA7C11;
+}
+
+/* Elegant selection */
+::selection {
+  background-color: var(--color-luxury-gold);
+  color: var(--color-luxury-black);
+}
+
+/* Utility Animations */
+.gold-gradient-text {
+  background: linear-gradient(135deg, #FFF 0%, #D4AF37 50%, #AA7C11 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.luxury-border-glow {
+  position: relative;
+}
+
+.luxury-border-glow::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border: 1px solid transparent;
+  background: linear-gradient(135deg, #D4AF37, #AA7C11, transparent) border-box;
+  -webkit-mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+  opacity: 0.3;
+  transition: opacity 0.3s ease;
+}
+
+.luxury-border-glow:hover::after {
+  opacity: 1;
+}
+
+/* Scroll Reveal Classes */
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Custom Masonry Lookbook Grid */
+.lookbook-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-gap: 24px;
+  grid-auto-flow: dense;
+}
+
+.lookbook-item.tall {
+  grid-row: span 2;
+}
+
+.lookbook-item.wide {
+  grid-column: span 2;
+}
+
+@media (max-width: 768px) {
+  .lookbook-item.wide {
+    grid-column: span 1;
+  }
+}
+
+/* Floating WhatsApp Button */
+.whatsapp-float {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  background-color: #25D366;
+  color: white;
+  border-radius: 50%;
+  text-align: center;
+  font-size: 30px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+  z-index: 100;
+  width: 60px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+
+.whatsapp-float:hover {
+  transform: scale(1.1);
+  box-shadow: 0 6px 15px rgba(37, 211, 102, 0.4);
+}
+
+/* Hero Carousel Overlay */
+.hero-overlay {
+  background: linear-gradient(to top, var(--color-luxury-black) 0%, rgba(10, 10, 10, 0.4) 60%, rgba(10, 10, 10, 0.2) 100%);
+}
+
+/* Glassmorphism Navigation */
+.glass-nav {
+  background: rgba(10, 10, 10, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+/* Product Card Hover Effect */
+.product-card-img-container img {
+  transition: transform 0.7s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.product-card-img-container:hover img {
+  transform: scale(1.08);
+}
+
+/* Timeline Custom Lines */
+.timeline::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  width: 1px;
+  background-color: #2A2A2A;
+  transform: translateX(-50%);
+}
+
+@media (max-width: 768px) {
+  .timeline::before {
+    left: 20px;
+  }
+}
+
+/* Page Loader styling if needed */
+.loader-wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--color-luxury-black);
+  z-index: 9999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: opacity 0.5s ease, visibility 0.5s ease;
+}
+
+/* Modal Open classes */
+.modal-active {
+  overflow: hidden;
+}
